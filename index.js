@@ -1,19 +1,51 @@
+
+
 const fs = require("fs");
-const fs = require("inquirer")
+const inquirer = require("inquirer")
+const util = require("util");
+
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // const questions = [];
 
-inquirer userPrompt(){
-    .prompt([
-        What is your favorite color ?
+function userPrompt() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "Github username",
+            message: "What is your GitHub username?"
+        },
+        {
+            type: "checkbox",
+            name: "Color",
+            message: "Choose your favorite color.",
+            choices: [
+                "Red",
+                "Pink",
+                "Green",
+                "Blue"
+            ]
+        }
     ])
-}
-    
+};
 
-function writeToFile(generateHTML.js, data) {
+userPrompt()
+    .then(function (data) {
+        const html = generateHTML(data);
+        return writeFileAsync("index.html", html);
+    })
+    .then(function () {
+        console.log("Successfully wrote to index.html");
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
 
-}
 
-function init() {
+// function writeToFile(fileName, data) {
 
-    init();
+// }
+
+// function init() {
+
+//     init();

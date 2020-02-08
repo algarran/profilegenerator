@@ -1,0 +1,29 @@
+{
+  "name": "profilegenerator",
+  "version": "1.0.0",
+  "description": "profile generator using github username",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algarran/profilegenerator.git"
+  },
+  "keywords": [
+    "profile",
+    "generator",
+    "github",
+    "coding",
+    "username"
+  ],
+  "author": "Nick Algarra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/algarran/profilegenerator/issues"
+  },
+  "homepage": "https://github.com/algarran/profilegenerator#readme",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  }
+}
